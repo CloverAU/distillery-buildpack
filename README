@@ -1,0 +1,17 @@
+# Distillery buildpack
+
+This buildpack is for use in conjuction with the elixir buildpack, but for an app that has been configured to use distillery.
+
+## Why?
+
+We needed to migrate an app already configured to use distillery and wanted to make as few changes to it as possible
+
+## How?
+
+All it does is runs `mix release`, you will need to modify your Procfile to run the built release
+
+Example procfile
+
+```
+web: _build/prod/rel/appname/bin/trading foreground
+```
